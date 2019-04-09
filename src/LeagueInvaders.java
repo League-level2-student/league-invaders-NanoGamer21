@@ -1,16 +1,28 @@
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 
 public class LeagueInvaders {
 	JFrame frame;
-	int height = 800;
-	int width = 500;
+	final int height = 800;
+	final int width = 500;
+	gamePanel gamePanel;
 	public static void main(String[] args) {
-		new LeagueInvaders().createUI();
-	}
-		private void createUI(){
-			frame = new JFrame();
-			frame.setSize(width, height);
-			frame.setVisible(true);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		LeagueInvaders game = new LeagueInvaders();
+		game.setup();
 }
+	public LeagueInvaders(){
+		frame = new JFrame();
+		gamePanel = new gamePanel();
+	}
+	void setup() {
+
+		frame.setSize(width, height);
+		frame.add(gamePanel);
+		frame.getContentPane();
+		frame.setPreferredSize(new Dimension (width,height));
+		frame.setVisible(true);
+		frame.pack();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+	}
 }
