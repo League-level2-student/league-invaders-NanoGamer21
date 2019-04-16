@@ -16,13 +16,14 @@ public class LeagueInvaders {
 		gamePanel = new gamePanel();
 	}
 	void setup() {
-
 		frame.setSize(width, height);
 		frame.add(gamePanel);
 		frame.getContentPane();
 		frame.setPreferredSize(new Dimension (width,height));
 		frame.setVisible(true);
 		frame.pack();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.addKeyListener(gamePanel);
+		System.out.println("Sup buddy");
 	}
 }
