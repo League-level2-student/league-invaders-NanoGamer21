@@ -5,13 +5,17 @@ int x;
 int y;
 int width;
 int height;
-
-
+GameObject(int x,int y , int width , int height ){
+this.x = x;
+this.y = y;
+this.width =width;
+this.height = height;
+}
 void update() {
 
 }
 void draw(Graphics g) {
-	g.fillRect(10, 10, 100, 100);
+	g.fillRect(x, y, 100, 100);
 	System.out.println("hi my good knowing guy friend");
 }
 }
