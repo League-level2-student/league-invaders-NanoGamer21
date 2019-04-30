@@ -10,9 +10,9 @@ import javax.swing.Timer;
 
 public class gamePanel extends JPanel implements ActionListener, KeyListener   {
 Timer bob;
-final int MENU_STATE = 0;
-final int GAME_STATE = 1;
-final int END_STATE = 2;
+final int MENU_STATE = 1;
+final int GAME_STATE = 2;
+final int END_STATE = 3;
 int currentState = MENU_STATE;
 
 
@@ -45,12 +45,7 @@ public void paintComponent(Graphics g){
 public void actionPerformed(ActionEvent arg0) {
 	// TODO Auto-generated method stub
 	repaint();
-}
-@Override
-public void keyPressed(KeyEvent arg0) {
-	// TODO Auto-generated method stub
-	System.out.println("Key pressed");
-    if(currentState == MENU_STATE){
+	if(currentState == MENU_STATE){
 
         updateMenuState();
 
@@ -63,6 +58,20 @@ public void keyPressed(KeyEvent arg0) {
         updateEndState();
 
 }
+}
+@Override
+public void keyPressed(KeyEvent arg0) {
+	// TODO Auto-generated method stub
+	System.out.println("Key pressed");
+   int keyCode = arg0.getKeyCode();
+   if(keyCode == KeyEvent.VK_ENTER) {
+	   currentState++;
+	   System.out.println(currentState);
+	   if(currentState > END_STATE) {
+		   currentState = MENU_STATE;
+	   }
+   }
+
 }
 @Override
 public void keyReleased(KeyEvent e) {
@@ -89,7 +98,8 @@ void drawMenuState(Graphics g) {
 	g.fillRect(0, 0, LeagueInvaders.width, LeagueInvaders.height);  
 }
 void drawGameState(Graphics g) {
-	
+	g.setColor(Color.BLACK);
+	g.fillRect(0, 0, LeagueInvaders.width, LeagueInvaders.height);  
 }
 void drawEndState(Graphics g) {
 	
