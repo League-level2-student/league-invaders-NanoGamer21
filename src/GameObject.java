@@ -15,7 +15,6 @@ void update() {
 
 }
 void draw(Graphics g) {
-	g.fillRect(x, y, 100, 100);
-	System.out.println("hi my good knowing guy friend");
+	
 }
 }

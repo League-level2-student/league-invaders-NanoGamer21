@@ -14,6 +14,7 @@ public class LeagueInvaders {
 	public LeagueInvaders(){
 		frame = new JFrame();
 		gamePanel = new gamePanel();
+		
 	}
 	void setup() {
 		frame.setSize(width, height);
@@ -24,6 +25,7 @@ public class LeagueInvaders {
 		frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(gamePanel);
+		gamePanel.gameStart();
 		System.out.println("Sup buddy");
 	}
 }
