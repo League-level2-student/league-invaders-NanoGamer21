@@ -17,6 +17,7 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener {
 	int currentState = MENU_STATE;
 	Font titleFont;
 	Rocketship Rocketship = new Rocketship(250,500,50,50);
+	 
 	
 	
 	public gamePanel() {
@@ -82,7 +83,7 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener {
 		int keyCodeup = arg0.getKeyCode();
 		System.out.println(keyCodeup);
 		if(keyCodeup == KeyEvent.VK_W) {
-			Rocketship.y--;
+			Rocketship.y-=speed;
 			
 		}
 		int keycodedwn = arg0.getKeyCode();
