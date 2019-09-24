@@ -79,6 +79,25 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener {
 				currentState = MENU_STATE;
 			}
 		}
+		int keyCodeup = arg0.getKeyCode();
+		System.out.println(keyCodeup);
+		if(keyCodeup == KeyEvent.VK_W) {
+			Rocketship.y--;
+			
+		}
+		int keycodedwn = arg0.getKeyCode();
+		if(keycodedwn == KeyEvent.VK_S) {
+			Rocketship.y++;
+		}
+		int keycodedlft = arg0.getKeyCode();
+		if(keycodedlft == KeyEvent.VK_A) {
+			Rocketship.x--;
+		}
+		int keycodedRght = arg0.getKeyCode();
+		if(keycodedRght == KeyEvent.VK_D) {
+			Rocketship.x++;
+		}
+		
 
 	}
 
