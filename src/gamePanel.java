@@ -11,10 +11,12 @@ import javax.swing.Timer;
 
 public class gamePanel extends JPanel implements ActionListener, KeyListener {
 	Timer bob;
+
 	final int MENU_STATE = 1;
 	final int GAME_STATE = 2;
 	final int END_STATE = 3;
 	int currentState = MENU_STATE;
+	
 	Font titleFont;
 	Rocketship Rocketship = new Rocketship(250,500,50,50);
 	 
@@ -83,20 +85,20 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener {
 		int keyCodeup = arg0.getKeyCode();
 		System.out.println(keyCodeup);
 		if(keyCodeup == KeyEvent.VK_W) {
-			Rocketship.y-=speed;
+			Rocketship.moveUp = true;
 			
 		}
 		int keycodedwn = arg0.getKeyCode();
 		if(keycodedwn == KeyEvent.VK_S) {
-			Rocketship.y++;
+			Rocketship.moveDown = true;
 		}
 		int keycodedlft = arg0.getKeyCode();
 		if(keycodedlft == KeyEvent.VK_A) {
-			Rocketship.x--;
+			Rocketship.moveRight = true;
 		}
 		int keycodedRght = arg0.getKeyCode();
 		if(keycodedRght == KeyEvent.VK_D) {
-			Rocketship.x++;
+			Rocketship.moveLeft = true;
 		}
 		
 
@@ -105,6 +107,24 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
+		int keyCodeup = e.getKeyCode();
+		System.out.println(keyCodeup);
+		if(keyCodeup == KeyEvent.VK_W) {
+			Rocketship.moveUp = false;
+			
+		}
+		int keycodedwn = e.getKeyCode();
+		if(keycodedwn == KeyEvent.VK_S) {
+			Rocketship.moveDown = false;
+		}
+		int keycodedlft = e.getKeyCode();
+		if(keycodedlft == KeyEvent.VK_A) {
+			Rocketship.moveRight = false;
+		}
+		int keycodedRght = e.getKeyCode();
+		if(keycodedRght == KeyEvent.VK_D) {
+			Rocketship.moveLeft = false;
+		}
 
 	}
 
